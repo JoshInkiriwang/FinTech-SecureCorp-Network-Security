@@ -29,3 +29,9 @@ In this collaborative graduate project, I served as the **Technical Lead for Doc
 - **Network Simulation:** Cisco Packet Tracer
 - **Security Protocols:** Access Control Lists (ACL), NAT, AES Cryptography
 - **System Analysis:** Advanced Documentation & Requirement Validation
+
+### Technical Highlights & Implementation
+- **Hardware Optimization:** Utilized Layer 2/3 Switching modules on the main Firewall-Router to overcome physical port limitations, implementing SVI (Switch Virtual Interfaces) for VLAN routing.
+- **Security Policy:** Implemented **Standard & Extended ACLs (110)** with a focus on 'Least Privilege'—strictly blocking general staff access to the Server Farm while permitting necessary traffic from the DMZ.
+- **NAT & Public Access:** Configured Static NAT for HTTP/HTTPS traffic to ensure secure delivery of web services to the public internet.
+- **Layer 2 Hardening:** Applied **Port-Security** on Internal LAN switches to mitigate unauthorized physical access and MAC-based attacks.
