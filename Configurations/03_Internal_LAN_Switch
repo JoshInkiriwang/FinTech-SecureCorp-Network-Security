@@ -1,0 +1,26 @@
+hostname Internal-LAN-Switch
+!
+interface FastEthernet0/1
+ description ## TRUNK TO FIREWALL-ROUTER ##
+ switchport trunk allowed vlan 30,40,99
+ switchport mode trunk
+!
+! -- Access Ports with Port-Security Enabled --
+! Port-Security is used here to prevent unauthorized device connection (MAC Filtering)
+interface FastEthernet0/2
+ description ## FINANCE-PC (VLAN 30) ##
+ switchport access vlan 30
+ switchport mode access
+ switchport port-security
+!
+interface FastEthernet0/4
+ description ## STAFF-PC (VLAN 40) ##
+ switchport access vlan 40
+ switchport mode access
+ switchport port-security
+!
+interface FastEthernet0/5
+ description ## IT-ADMIN-PC (MANAGEMENT VLAN 99) ##
+ switchport access vlan 99
+ switchport mode access
+ switchport port-security
