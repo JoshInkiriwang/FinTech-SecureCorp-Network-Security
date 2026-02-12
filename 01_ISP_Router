@@ -1,0 +1,9 @@
+hostname ISP-Router
+!
+interface GigabitEthernet0/0
+ description ## TO INTERNAL FIREWALL/ROUTER0 (WAN LINK) ##
+ ip address 203.0.113.5 255.255.255.252
+!
+interface GigabitEthernet0/1
+ description ## TO INTERNET / CLOUD ##
+ ip address 203.0.113.1 255.255.255.252
