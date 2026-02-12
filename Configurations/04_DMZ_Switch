@@ -1,0 +1,18 @@
+hostname DMZ-Switch
+!
+! -- Core Uplink --
+interface FastEthernet0/1
+ description ## CONNECTION TO FIREWALL-ROUTER (DMZ PORT) ##
+ switchport access vlan 10
+ switchport mode access
+!
+! -- DMZ Servers --
+interface FastEthernet0/2
+ description ## WEB SERVER ##
+ switchport access vlan 10
+ switchport mode access
+!
+interface FastEthernet0/3
+ description ## MAIL SERVER ##
+ switchport access vlan 10
+ switchport mode access

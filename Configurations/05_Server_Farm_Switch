@@ -1,0 +1,18 @@
+hostname Server-Farm-Switch
+!
+! -- Core Uplink --
+interface FastEthernet0/1
+ description ## CONNECTION TO FIREWALL-ROUTER (SERVER FARM PORT) ##
+ switchport access vlan 20
+ switchport mode access
+!
+! -- Critical Infrastructure (Protected Area) --
+interface FastEthernet0/2
+ description ## DATABASE SERVER ##
+ switchport access vlan 20
+ switchport mode access
+!
+interface FastEthernet0/3
+ description ## APPLICATION SERVER ##
+ switchport access vlan 20
+ switchport mode access
