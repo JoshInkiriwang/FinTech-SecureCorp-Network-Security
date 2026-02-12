@@ -1,0 +1,55 @@
+hostname Firewall-Router-0
+!
+interface GigabitEthernet0/0
+ description ## OUTSIDE INTERFACE (TO ISP) ##
+ ip address 203.0.113.6 255.255.255.252
+ ip nat outside
+!
+! -- Internal Interfaces using Switching Module (SVI) --
+interface FastEthernet0/0/0 
+ description ## DMZ AREA CONNECTION ##
+ switchport access vlan 10
+!
+interface FastEthernet0/0/1
+ description ## TRUNK TO INTERNAL LAN SWITCH ##
+ switchport trunk allowed vlan 2-9,11-19,21-1001
+ switchport mode trunk
+!
+interface FastEthernet0/0/2
+ description ## SERVER FARM CONNECTION ##
+ switchport access vlan 20
+!
+! -- Layer 3 Virtual Interfaces (Gateways) --
+! Note: Using SVI due to limited physical routed ports
+interface Vlan10
+ description ## DMZ GATEWAY ##
+ ip address 10.10.10.1 255.255.255.224
+ ip nat inside
+!
+interface Vlan20
+ description ## SERVER FARM GATEWAY ##
+ ip address 10.10.20.1 255.255.255.240
+ ip nat inside
+ ip access-group 110 out
+!
+interface Vlan30
+ description ## FINANCE & HR GATEWAY ##
+ ip address 10.10.30.1 255.255.255.192
+ ip nat inside
+!
+! -- Network Address Translation (NAT) Configuration --
+! Mapping Public IPs to Internal Web Server (HTTP/HTTPS)
+ip nat inside source static tcp 10.10.10.10 443 203.0.113.6 443 
+ip nat inside source static tcp 10.10.10.10 80 203.0.113.6 80 
+!
+! -- Static Routing --
+! Default Route to ISP
+ip route 0.0.0.0 0.0.0.0 203.0.113.5
+!
+! -- Access Control List (ACL) 110 --
+! [1] Deny General Staff from accessing sensitive Server Farm (DB/App)
+access-list 110 deny ip 10.10.40.0 0.0.0.255 10.10.20.0 0.0.0.15 
+! [2] Permit DMZ (Web/Mail) to access Server Farm resources
+access-list 110 permit tcp 10.10.10.0 0.0.0.31 10.10.20.0 0.0.0.15 
+! [3] Implicit Permit for other traffic (FIFO logic)
+access-list 110 permit ip any any
