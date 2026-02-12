@@ -18,7 +18,6 @@ In this collaborative graduate project, I served as the **Technical Lead for Doc
 
 ### 3. Simulation & Security Verification
 - **Technical Validation:** Managed the transition from GNS3 to **Cisco Packet Tracer** to ensure functional delivery while maintaining core security features like filtering and access control.
-- **Cryptographic Integration:** Collaborated on the verification of cryptographic mechanisms, including **AES Encryption/Decryption** simulations (documented in the appendix).
 - **Evidence of Work:** Produced technical video recordings to demonstrate the network's resilience and functional integrity.
 
 ## Key Deliverables
