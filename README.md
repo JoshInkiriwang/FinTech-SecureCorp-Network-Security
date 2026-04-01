@@ -3,6 +3,9 @@
 ## Project Overview
 This project presents the design and implementation of a secure network infrastructure for **"FinTech SecureCorp,"** a simulated financial technology environment. The project focuses on high-availability, logical segmentation, and robust security access controls to protect sensitive financial data in a FinTech ecosystem.
 
+## Business Problem
+Fintech companies require secure segmentation to protect sensitive financial transacation from internal threats and unauthorized access. This project simulates a secure enterprise network to address these challenges.
+
 ## My Roles & Responsibilities
 In this collaborative graduate project, I served as the **Technical Lead for Documentation and Network Validation**, ensuring the project met professional standards and technical accuracy.
 
