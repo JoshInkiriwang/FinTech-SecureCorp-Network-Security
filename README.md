@@ -1,47 +1,109 @@
 # FinTech SecureCorp: Enterprise Network Design & Security Validation
 
-## Project Overview
-This project presents the design and implementation of a secure network infrastructure for **"FinTech SecureCorp,"** a simulated financial technology environment. The project focuses on high-availability, logical segmentation, and robust security access controls to protect sensitive financial data in a FinTech ecosystem.
+## 🚀 Overview
 
-## Business Problem
-Fintech companies require secure segmentation to protect sensitive financial transacation from internal threats and unauthorized access. This project simulates a secure enterprise network to address these challenges.
+FinTech SecureCorp is a simulated enterprise network project designed to address real-world challenges in securing financial systems. The focus of this project is to ensure **secure network segmentation, controlled access, and reliable connectivity** in a high-risk financial technology environment.
 
-## My Roles & Responsibilities
-In this collaborative graduate project, I served as the **Technical Lead for Documentation and Network Validation**, ensuring the project met professional standards and technical accuracy.
+This project demonstrates how a structured network architecture can **protect sensitive financial data, enforce access control policies, and enable secure external communication**.
 
-### 1. Technical Documentation & Refinement
-- **Report Excellence:** Refined and restructured the overall project report (Chapter 1 to 5) to ensure professional academic standards.
-- **Data Structuring:** Developed comprehensive IP addressing schemes and implementation tables (Chapter 4) for scalable network routing.
+---
 
-### 2. Network Design & Logical Validation
-- **Logical Topology & Segmentation:** Designed and validated the logical structure and security segmentation using **Cisco Packet Tracer**.
-- **Access Control Implementation:** Configured and tested **Standard & Extended ACLs** to secure internal segments and the Server Farm.
-- **NAT Configuration:** Implemented Static NAT for secure public-facing services (Web Server).
-- **Routing Strategy:** Verified the stability of **Static Routing** for this specific architectural requirement.
+## 🧩 Business Problem
 
-### 3. Simulation & Security Verification
-- **Technical Validation:** Managed the transition from GNS3 to Cisco Packet Tracer to ensure functional delivery while maintaining core security features.
-- **Evidence of Work:** Produced technical video recordings to demonstrate the network's resilience and functional integrity.
+Financial technology companies handle highly sensitive data and require strict security controls to prevent:
 
-## Technical Highlights & Implementation
-- **Hardware Optimization:** Utilized Layer 2/3 Switching modules on the main Firewall-Router to overcome physical port limitations via **SVI (Switch Virtual Interfaces)**.
-- **Security Policy:** Implemented **ACL 110** with a 'Least Privilege' focus, strictly isolating the Server Farm from general staff access.
-- **NAT & Public Access:** Configured Static NAT for HTTP/HTTPS traffic (Ports 80/443) to the Web Server.
-- **Layer 2 Hardening:** Applied **Port-Security** on Internal LAN switches to mitigate unauthorized physical access.
+* Unauthorized internal access to critical systems
+* Exposure of public-facing services
+* Network instability due to poor segmentation
 
-## Repository Structure
-- `Docs/`: Technical Report (PDF) and supporting documents.
-- `Simulation/`: Validated Cisco Packet Tracer (.pkt) file.
-- `Configurations/`: Clean CLI configuration scripts (.txt) for each device.
-- `Assets/`: Network topology diagrams and addressing table screenshots.
+This project simulates a secure enterprise network to solve these challenges using **segmentation, access control, and controlled routing strategies**.
 
-## Future Work & Improvements
-- **Service Redundancy:** Implementation of a dedicated DNS Server and Mail Server within the DMZ.
-- **Advanced Security:** Integration of Intrusion Detection/Prevention Systems (IDS/IPS) and Honeypots.
-- **Routing Scalability:** Migration from Static Routing to Dynamic Routing protocols (e.g., OSPF) for larger enterprise scalability.
-- **Monitoring:** Implementation of SNMP-based network monitoring tools.
+---
 
-## Technologies Used
-- **Network Simulation:** Cisco Packet Tracer
-- **Security Protocols:** Access Control Lists (ACL), NAT, Port-Security
-- **System Analysis:** Advanced Documentation & Requirement Validation
+## 👨‍💻 My Role & Contributions
+
+**Technical Lead – Documentation & Network Validation**
+
+* Led the **technical documentation and report refinement** (Chapter 1–5) to meet professional standards
+* Designed and validated **IP addressing schemes** for scalable and structured routing
+* Built and tested **logical topology and VLAN segmentation**
+* Implemented and verified **Access Control Lists (ACLs)** with a *least privilege* approach
+* Configured **Static NAT** for secure public service exposure (Web Server)
+* Validated **routing stability using static routing**
+* Produced **technical demonstration videos** to showcase system functionality
+
+---
+
+## 🛠️ Key Skills Demonstrated
+
+* Network Segmentation (VLAN, SVI)
+* Network Security (ACL, Port Security, NAT)
+* Routing & Switching Fundamentals
+* Network Simulation & Validation (Cisco Packet Tracer)
+* Technical Documentation & Communication
+* Problem Analysis & Solution Design
+
+---
+
+## 🔐 Technical Highlights
+
+* **Secure Segmentation:** VLAN-based separation of internal departments and server farm
+* **Access Control Enforcement:** ACL 110 implemented with *least privilege* policy
+* **Public Access Security:** Static NAT configured for HTTP/HTTPS (Ports 80/443)
+* **Layer 2 Hardening:** Port Security applied to prevent unauthorized device access
+* **Hardware Optimization:** Leveraged Layer 2/3 switching modules with SVI to overcome port limitations
+
+---
+
+## 📊 Results & Impact
+
+* Successfully **isolated sensitive server infrastructure** from general user access
+* Reduced risk of **unauthorized lateral movement within the network**
+* Enabled **secure external access** to web services using NAT
+* Delivered a **stable and scalable network design** suitable for enterprise environments
+
+---
+
+## 🧪 Simulation & Validation
+
+* Platform: Cisco Packet Tracer
+* Verified:
+
+  * Inter-VLAN routing functionality
+  * ACL enforcement between segments
+  * NAT translation for external access
+* Supporting **video demonstrations** included in repository
+
+---
+
+## 📁 Repository Structure
+
+* `Docs/` → Technical Report & Documentation
+* `Simulation/` → Cisco Packet Tracer (.pkt) file
+* `Configurations/` → Device CLI configurations (.txt)
+* `Assets/` → Topology diagrams & addressing tables
+
+---
+
+## 🔮 Future Improvements
+
+* Implement **Dynamic Routing (OSPF)** for scalability
+* Add **IDS/IPS and Honeypot systems** for advanced threat detection
+* Introduce **DNS & Mail Servers in DMZ architecture**
+* Integrate **network monitoring (SNMP-based tools)**
+
+---
+
+## 🧰 Technologies Used
+
+* Cisco Packet Tracer
+* VLAN, SVI, Static Routing
+* Access Control Lists (ACL)
+* NAT (Static NAT)
+* Port Security
+
+---
+
+## 💡 Key Takeaway
+
+This project reflects my ability to design and validate **secure, structured, and scalable network architectures**, combining both **technical implementation and clear documentation**—a critical skill set for network and security roles in real-world environments.
