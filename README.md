@@ -16,7 +16,7 @@
 
 ## 📌 Overview
 
-This project presents the design and implementation of a secure enterprise network architecture for a FinTech company using Cisco Packet Tracer. The focus is on network segmentation, access control, and security hardening to protect sensitive financial data from unauthorized access and internal threats.
+This project simulates a secure enterprise-grade network for a FinTech company using **Cisco Packet Tracer**, focusing on preventing unauthorized access, limiting lateral movement, and enforcing least-privilege communication. The focus is on network segmentation, access control, and security hardening to protect sensitive financial data from unauthorized access and internal threats.
 
 ---
 
