@@ -1,5 +1,19 @@
 # FinTech SecureCorp Network Security Design
 
+## 📑 Table of Contents
+
+- [Overview](#-overview)
+- [Problem Statement](#️-problem-statement)
+- [Objectives](#-objectives)
+- [Network Architecture](#-network-architecture)
+- [Security Implementation](#-security-implementation)
+- [Threat Scenarios & Mitigation](#️-threat-scenarios--mitigation)
+- [Results](#-results)
+- [Key Learnings](#-key-learnings)
+- [Future Improvements](#-future-improvements)
+- [Tools Used](#-tools-used)
+- [Repository Structure](#-repository-structure)
+
 ## 📌 Overview
 
 This project presents the design and implementation of a secure enterprise network architecture for a FinTech company using Cisco Packet Tracer. The focus is on network segmentation, access control, and security hardening to protect sensitive financial data from unauthorized access and internal threats.
