@@ -7,7 +7,7 @@
 - [Objectives](#-objectives)
 - [Network Architecture](#-network-architecture)
 - [Security Implementation](#-security-implementation)
-- [Advanced Implementation (GNS3 + VyOS)](#-Advanced-Implementation-(GNS3-+-VyOS))
+- [#-Advanced-Implementation-(GNS3-+-VyOS](https://github.com/JoshInkiriwang/FinTech-SecureCorp-Network-Security/blob/main/README.md#-advanced-implementation-gns3--vyos))
 - [Threat Scenarios & Mitigation](#️-threat-scenarios--mitigation)
 - [Results](#-results)
 - [Key Learnings](#-key-learnings)
@@ -15,9 +15,11 @@
 - [Tools Used](#-tools-used)
 - [Repository Structure](#-repository-structure)
 
+- https://github.com/JoshInkiriwang/FinTech-SecureCorp-Network-Security/blob/main/README.md#-advanced-implementation-gns3--vyos
+
 ## 📌 Overview
 
-This project simulates a secure enterprise-grade network for a FinTech company using **Cisco Packet Tracer**, focusing on preventing unauthorized access, limiting lateral movement, and enforcing least-privilege communication. The focus is on network segmentation, access control, and security hardening to protect sensitive financial data from unauthorized access and internal threats.
+This project simulates a secure enterprise-grade network architecture for a FinTech environtment, focusing on protecting sensitive financial systems from unauthorized access and internal threats. The initial design was developed using **Cisco Packet Tracer** to establish core networking concepts such as VLAN segmentation, inter-VLAN routing and access control. To better reflect real-world network behaviour, the project was extended using **GNS3** and **VyOS** to implement zone-based firewall policies and simulate realistic traffic flows. The solution demonstrates how network segmentation, access control, and layered security mechanisms can be combined to reduce attack surface, prevent lateral movement, and enforce least-privilege communication in a production-like environment.
 
 ---
 
@@ -112,13 +114,13 @@ Using VyOS, a zone-based firewall policy was implemented:
 | Client-B | Client-A    | ✅ Allow |
 
 🔹 Key Configuration Example
-"""
+
 set firewall ipv4 name BLOCK-SERVER default-action accept
 
 set firewall ipv4 name BLOCK-SERVER rule 10 action drop
 set firewall ipv4 name BLOCK-SERVER rule 10 source address 10.10.20.0/24
 set firewall ipv4 name BLOCK-SERVER rule 10 destination address 10.10.30.0/24
-"""
+
 
 🔹 Key Learnings from Advanced Setup
 * Understanding zone-based traffic flow (FROM → TO)
