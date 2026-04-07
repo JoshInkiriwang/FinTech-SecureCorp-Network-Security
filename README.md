@@ -17,7 +17,7 @@
 
 ## 📌 Overview
 
-This project simulates a secure enterprise-grade network architecture for a FinTech environtment, focusing on protecting sensitive financial systems from unauthorized access and internal threats. The initial design was developed using **Cisco Packet Tracer** to establish core networking concepts such as VLAN segmentation, inter-VLAN routing and access control. To better reflect real-world network behaviour, the project was extended using **GNS3** and **VyOS** to implement zone-based firewall policies and simulate realistic traffic flows. The solution demonstrates how network segmentation, access control, and layered security mechanisms can be combined to reduce attack surface, prevent lateral movement, and enforce least-privilege communication in a production-like environment.
+This project simulates a secure enterprise-grade network architecture for a FinTech environment, focusing on protecting sensitive financial systems from unauthorized access and internal threats. The initial design was developed using **Cisco Packet Tracer** to establish core networking concepts such as VLAN segmentation, inter-VLAN routing and access control. To better reflect real-world network behavior, the project was extended using **GNS3** and **VyOS** to implement zone-based firewall policies and simulate realistic traffic flows. The solution demonstrates how network segmentation, access control, and layered security mechanisms can be combined to reduce attack surface, prevent lateral movement, and enforce least-privilege communication in a production-like environment.
 
 ---
 
@@ -81,21 +81,21 @@ The network is structured into multiple segments to isolate traffic and improve 
 ## 🚀 Advanced Implementation (GNS3 + VyOS)
 To enhance the realism of the simulation and align with industry pratices, this project was extended beyond Cisco Packet Tracer using GNS3 and VyOS
 
-🔹 Motivation
-While Cisco Packet Tracer is useful for foundational learning, it has limitations in simulating real-world firewall behaviour and network traffic inspection. Therefore, this project was upgraded to:
-* Simulate real packet flow and routing behaviour
+### Motivation
+While Cisco Packet Tracer is useful for foundational learning, it has limitations in simulating real-world firewall behavior and network traffic inspection. Therefore, this project was upgraded to:
+* Simulate real packet flow and routing behavior
 * Implement zone-based firewall policies
 * Gain hands-on experience with Linux-based network operating systems
 
-🔹 Network Segmentation Upgrade
-The network was redesign into three main zones:
+###🔹 Network Segmentation Upgrade
+The network was redesigned into three main zones:
 | Zone     | Subnet        | Description                |
 | -------- | ------------- | -------------------------- |
 | Client-A | 10.10.10.0/24 | Trusted internal users     |
 | Client-B | 10.10.20.0/24 | Restricted users           |
 | Server   | 10.10.30.0/24 | Critical financial systems |
 
-🔹 Zone-Based Firewall Implementation
+### Zone-Based Firewall Implementation
 
 Using VyOS, a zone-based firewall policy was implemented:
 
@@ -111,7 +111,7 @@ Using VyOS, a zone-based firewall policy was implemented:
 | Client-A | Client-B    | ✅ Allow |
 | Client-B | Client-A    | ✅ Allow |
 
-🔹 Key Configuration Example
+### Key Configuration Example
 
 ```bash
 set firewall ipv4 name BLOCK-SERVER default-action accept
@@ -128,7 +128,26 @@ set firewall ipv4 name BLOCK-SERVER rule 10 destination address 10.10.30.0/24
 * Difference between: Cisco ACL (interface-based) and VyOS firewall (policy-based)
 
 ---
+## 🧪 Validation & Testing
 
+The implemented security policies were validated through connectivity testing between network segments.
+
+### Test Scenarios
+
+| Source | Destination | Expected Result | Actual Result |
+|--------|------------|----------------|--------------|
+| Client-A | Server | Allowed | ✅ Success |
+| Client-B | Server | Blocked | ❌ Denied |
+| Client-A | Client-B | Allowed | ✅ Success |
+| Client-B | Client-A | Allowed | ✅ Success |
+
+### Key Validation Insight
+
+- Verified enforcement of least-privilege communication  
+- Confirmed segmentation prevents unauthorized access  
+- Identified and resolved misconfiguration issues (e.g., unintended deny-all rules)
+  
+---
 ## ⚔️ Threat Scenarios & Mitigation
 
 Scenario 1: Unauthorized Device Access
