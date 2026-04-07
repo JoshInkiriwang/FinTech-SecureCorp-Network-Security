@@ -119,14 +119,13 @@ set firewall ipv4 name BLOCK-SERVER default-action accept
 set firewall ipv4 name BLOCK-SERVER rule 10 action drop
 set firewall ipv4 name BLOCK-SERVER rule 10 source address 10.10.20.0/24
 set firewall ipv4 name BLOCK-SERVER rule 10 destination address 10.10.30.0/24
+```
 
-
-🔹 Key Learnings from Advanced Setup
+### Key Learnings from Advanced Setup
 * Understanding zone-based traffic flow (FROM → TO)
 * Importance of rule order and implicit deny
 * Handling return traffic and state awareness
 * Difference between: Cisco ACL (interface-based) and VyOS firewall (policy-based)
-```
 
 ---
 
